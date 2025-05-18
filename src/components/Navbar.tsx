@@ -24,37 +24,41 @@ const Navbar = () => {
       isScrolled ? "bg-hatchery-darker/80 backdrop-blur-md py-2" : "bg-transparent py-6"
     }`}>
       <div className="container mx-auto flex justify-between items-center px-4">
-        <div className="flex items-center gap-2">
-          <div className="relative">
+        <div className="flex-1"></div>
+        
+        <div className="flex flex-col items-center justify-center">
+          <div className="relative flex justify-center">
             <img 
-              src="/lovable-uploads/e644a66e-60d0-403d-8888-8ab3e91a741d.png" 
+              src="/lovable-uploads/c5d0f871-5f25-4c40-8dd3-02c7bee79720.png" 
               alt="Hatchery No.7 Logo" 
-              className="h-16 w-16" // Increased from h-10 w-10 to h-16 w-16
-              style={{ background: 'transparent' }} // Ensuring transparent background
+              className="h-24 w-auto" 
+              style={{ background: 'transparent' }}
             />
           </div>
-          <span className="font-orbitron text-hatchery-mint font-bold text-xl tracking-wider">HATCHERY NO.7</span>
+          <span className="font-orbitron text-hatchery-mint font-bold text-xl tracking-wider mt-2">HATCHERY NO.7</span>
         </div>
         
-        <div className="hidden md:flex space-x-8">
-          {["Home", "Products", "Process", "Contact"].map((item) => (
-            <a 
-              key={item} 
-              href={`#${item.toLowerCase()}`}
-              className="font-orbitron text-sm tracking-wider text-hatchery-light hover:text-hatchery-mint transition-colors"
-            >
-              {item.toUpperCase()}
-            </a>
-          ))}
-        </div>
+        <div className="flex-1 flex justify-end">
+          <div className="hidden md:flex space-x-8">
+            {["Home", "Products", "Process", "Contact"].map((item) => (
+              <a 
+                key={item} 
+                href={`#${item.toLowerCase()}`}
+                className="font-orbitron text-sm tracking-wider text-hatchery-light hover:text-hatchery-mint transition-colors"
+              >
+                {item.toUpperCase()}
+              </a>
+            ))}
+          </div>
 
-        <div className="md:hidden">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-hatchery-mint hover:text-hatchery-accent transition-colors"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-hatchery-mint hover:text-hatchery-accent transition-colors"
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 
