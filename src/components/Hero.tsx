@@ -15,7 +15,7 @@ const Hero = () => {
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-[20%] left-[10%] w-40 h-40 bg-hatchery-mint/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-[30%] right-[15%] w-60 h-60 bg-hatchery-mint/5 rounded-full blur-3xl"></div>
-        <div className="absolute top-[60%] left-[30%] w-20 h-20 bg-hatchery-mint/5 rounded-full blur-xl"></div>
+        <div className="absolute top-[60%] left-[30%] w-20 h-20 bg-hatchery-mint/5 rounded-full blur-3xl"></div>
       </div>
       
       {/* Hexagonal Grid Pattern */}
@@ -30,7 +30,8 @@ const Hero = () => {
             <img 
               src="/lovable-uploads/e644a66e-60d0-403d-8888-8ab3e91a741d.png" 
               alt="Hatchery No.7 Logo" 
-              className="w-32 h-32 mx-auto animate-float"
+              className="w-48 h-48 mx-auto animate-float"
+              style={{ background: 'transparent' }}
             />
           </div>
           
