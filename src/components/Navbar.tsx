@@ -25,11 +25,14 @@ const Navbar = () => {
     }`}>
       <div className="container mx-auto flex justify-between items-center px-4">
         <div className="flex items-center gap-2">
-          <img 
-            src="/lovable-uploads/e644a66e-60d0-403d-8888-8ab3e91a741d.png" 
-            alt="Hatchery No.7 Logo" 
-            className="h-10 w-10"
-          />
+          <div className="relative">
+            <img 
+              src="/lovable-uploads/e644a66e-60d0-403d-8888-8ab3e91a741d.png" 
+              alt="Hatchery No.7 Logo" 
+              className="h-16 w-16" // Increased from h-10 w-10 to h-16 w-16
+              style={{ background: 'transparent' }} // Ensuring transparent background
+            />
+          </div>
           <span className="font-orbitron text-hatchery-mint font-bold text-xl tracking-wider">HATCHERY NO.7</span>
         </div>
         
