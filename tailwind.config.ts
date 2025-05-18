@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+                hatchery: {
+                    mint: '#7FDED3',
+                    dark: '#121212',
+                    darker: '#0A0A0A',
+                    light: '#E0FFFC',
+                    accent: '#A2F9EE',
+                }
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,12 +92,42 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+                'glow': {
+                    '0%, 100%': { 
+                        boxShadow: '0 0 5px #7FDED3, 0 0 10px #7FDED3, 0 0 15px #7FDED3',
+                        opacity: '1'
+                    },
+                    '50%': { 
+                        boxShadow: '0 0 10px #7FDED3, 0 0 20px #7FDED3, 0 0 30px #7FDED3', 
+                        opacity: '0.8'
+                    }
+                },
+                'float': {
+                    '0%, 100%': { transform: 'translateY(0px)' },
+                    '50%': { transform: 'translateY(-10px)' }
+                },
+                'pulse-slow': {
+                    '0%, 100%': { opacity: '1' },
+                    '50%': { opacity: '0.7' }
+                },
+                'rotate-slow': {
+                    'from': { transform: 'rotate(0deg)' },
+                    'to': { transform: 'rotate(360deg)' }
+                }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+                'glow': 'glow 3s infinite ease-in-out',
+                'float': 'float 6s infinite ease-in-out',
+                'pulse-slow': 'pulse-slow 4s infinite ease-in-out',
+                'rotate-slow': 'rotate-slow 30s linear infinite'
+			},
+            fontFamily: {
+                'orbitron': ['Orbitron', 'sans-serif'],
+                'inter': ['Inter', 'sans-serif']
+            }
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
