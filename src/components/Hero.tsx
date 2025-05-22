@@ -1,16 +1,14 @@
-
 import { ChevronDown } from "lucide-react";
-
 const Hero = () => {
   const handleScroll = () => {
     const productsSection = document.querySelector('#products');
     if (productsSection) {
-      productsSection.scrollIntoView({ behavior: 'smooth' });
+      productsSection.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <section id="home" className="relative min-h-screen flex items-center">
+  return <section id="home" className="relative min-h-screen flex items-center">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-[20%] left-[10%] w-40 h-40 bg-hatchery-mint/5 rounded-full blur-3xl"></div>
@@ -20,13 +18,7 @@ const Hero = () => {
       
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-          className="w-full h-full object-cover opacity-30"
-        >
+        <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-30">
           <source src="/ZOOMBOI.mp4" type="video/mp4" />
         </video>
       </div>
@@ -36,7 +28,7 @@ const Hero = () => {
         <div className="flex flex-col items-center text-center">
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-glow">
-            <span className="text-hatchery-mint">HATCHERY</span> <span className="text-hatchery-light">NO.7</span>
+            <span className="text-hatchery-mint text-center text-4xl">HATCHERY</span> <span className="text-hatchery-light">NO.7</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-hatchery-light/80 max-w-2xl mb-10">
@@ -44,12 +36,9 @@ const Hero = () => {
             designed with laboratory-grade attention to detail.
           </p>
           
-          <button 
-            onClick={handleScroll}
-            className="bg-hatchery-mint/10 hover:bg-hatchery-mint/20 text-hatchery-mint border border-hatchery-mint/50 
+          <button onClick={handleScroll} className="bg-hatchery-mint/10 hover:bg-hatchery-mint/20 text-hatchery-mint border border-hatchery-mint/50 
                      px-8 py-3 rounded-md font-orbitron tracking-wider transition-all 
-                     hover:border-hatchery-mint hover:border-glow"
-          >
+                     hover:border-hatchery-mint hover:border-glow">
             EXPLORE COLLECTION
           </button>
         </div>
@@ -63,8 +52,6 @@ const Hero = () => {
       {/* Decorative Lines */}
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-hatchery-mint/30 to-transparent"></div>
       <div className="absolute bottom-2 left-0 w-full h-px bg-gradient-to-r from-transparent via-hatchery-mint/20 to-transparent"></div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
