@@ -31,10 +31,7 @@ const Hero = () => {
             <span className="text-hatchery-mint text-center text-4xl">HATCHERY</span> <span className="text-hatchery-light">NO.7</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-hatchery-light/80 max-w-2xl mb-10">
-            Precision-crafted 3D-printed flexi-dragons and innovative creations, 
-            designed with laboratory-grade attention to detail.
-          </p>
+          
           
           <button onClick={handleScroll} className="bg-hatchery-mint/10 hover:bg-hatchery-mint/20 text-hatchery-mint border border-hatchery-mint/50 
                      px-8 py-3 rounded-md font-orbitron tracking-wider transition-all 
