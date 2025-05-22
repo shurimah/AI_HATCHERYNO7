@@ -34,14 +34,6 @@ const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center text-center">
-          <div className="mb-8">
-            <img 
-              src="/lovable-uploads/e644a66e-60d0-403d-8888-8ab3e91a741d.png" 
-              alt="Hatchery No.7 Logo" 
-              className="w-48 h-48 mx-auto animate-float"
-              style={{ background: 'transparent' }}
-            />
-          </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-glow">
             <span className="text-hatchery-mint">HATCHERY</span> <span className="text-hatchery-light">NO.7</span>
