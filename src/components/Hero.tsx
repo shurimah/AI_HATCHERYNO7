@@ -18,9 +18,17 @@ const Hero = () => {
         <div className="absolute top-[60%] left-[30%] w-20 h-20 bg-hatchery-mint/5 rounded-full blur-3xl"></div>
       </div>
       
-      {/* Hexagonal Grid Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGgtMTJMMTggMzBsMTIgMTJoMTJsMTItMTJ6IiBzdHJva2U9IiM3RkRFRDMiIHN0cm9rZS13aWR0aD0iLjUiLz48L2c+PC9zdmc+')]"></div>
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0">
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          className="w-full h-full object-cover opacity-30"
+        >
+          <source src="/ZOOMBOI.mp4" type="video/mp4" />
+        </video>
       </div>
 
       {/* Content */}
