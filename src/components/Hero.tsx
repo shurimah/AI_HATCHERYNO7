@@ -18,24 +18,22 @@ const Hero = () => {
       
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
-        <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-30">
+        <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-30 mx-0 my-[113px]">
           <source src="/ZOOMBOI.mp4" type="video/mp4" />
         </video>
       </div>
 
       {/* Content */}
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col items-center text-center">
+        <div className="flex flex-col items-center text-center my-0 py-[240px]">
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-glow">
-            <span className="text-hatchery-mint text-center text-4xl">HATCHERY</span> <span className="text-hatchery-light">NO.7</span>
+            <span className="text-hatchery-mint text-center text-4xl my-[5px] px-0">HATCHERY</span> <span className="text-hatchery-light">NO.7</span>
           </h1>
           
           
           
-          <button onClick={handleScroll} className="bg-hatchery-mint/10 hover:bg-hatchery-mint/20 text-hatchery-mint border border-hatchery-mint/50 
-                     px-8 py-3 rounded-md font-orbitron tracking-wider transition-all 
-                     hover:border-hatchery-mint hover:border-glow">
+          <button onClick={handleScroll} className="bg-hatchery-mint/10 hover:bg-hatchery-mint/20 border border-hatchery-mint/50 font-orbitron tracking-wider transition-all hover:border-hatchery-mint hover:border-glow px-[26px] font-bold text-base rounded-2xl my-[127px] py-[19px] text-[#7fded3]/[0.61]">
             EXPLORE COLLECTION
           </button>
         </div>
