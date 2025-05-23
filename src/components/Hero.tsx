@@ -33,7 +33,7 @@ const Hero = () => {
           
           
           
-          <button onClick={handleScroll} className="border border-hatchery-mint/50 font-orbitron tracking-wider transition-all hover:border-hatchery-mint hover:border-glow px-[26px] font-bold text-base rounded-2xl text-[#7fded3]/[0.61] my-0 bg-[#010202]/[0.33] py-0">
+          <button onClick={handleScroll} className="border border-hatchery-mint/50 font-orbitron tracking-wider transition-all hover:border-hatchery-mint hover:border-glow px-[26px] font-bold text-base rounded-2xl text-[#7fded3]/[0.61] my-0 bg-[#010202]/[0.33] py-0\n\n\xA0">
             EXPLORE COLLECTION
           </button>
         </div>
