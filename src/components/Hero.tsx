@@ -28,7 +28,7 @@ const Hero = () => {
         <div className="rounded-sm">
           
           <h1 className="text-5xl md:text-7xl mb-6 text-glow font-extrabold">
-            <span className="text-hatchery-mint text-center px-0 my-0 font-extralight text-2xl">HATCHERY</span> <span className="text-hatchery-light">NO.7</span>
+            <span className="text-hatchery-mint text-center px-0 my-0 font-extralight text-3xl">HATCHERY</span> <span className="text-hatchery-light">NO.7</span>
           </h1>
           
           
