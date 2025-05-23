@@ -27,13 +27,13 @@ const Hero = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center text-center my-0 py-[240px]">
           
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-glow">
-            <span className="text-hatchery-mint text-center text-4xl my-[5px] px-0">HATCHERY</span> <span className="text-hatchery-light">NO.7</span>
+          <h1 className="text-5xl md:text-7xl mb-6 text-glow font-extrabold">
+            <span className="text-hatchery-mint text-center text-4xl px-0 my-0 font-thin">HATCHERY</span> <span className="text-hatchery-light">NO.7</span>
           </h1>
           
           
           
-          <button onClick={handleScroll} className="bg-hatchery-mint/10 hover:bg-hatchery-mint/20 border border-hatchery-mint/50 font-orbitron tracking-wider transition-all hover:border-hatchery-mint hover:border-glow px-[26px] font-bold text-base rounded-2xl my-[127px] py-[19px] text-[#7fded3]/[0.61]">
+          <button onClick={handleScroll} className="border border-hatchery-mint/50 font-orbitron tracking-wider transition-all hover:border-hatchery-mint hover:border-glow px-[26px] font-bold text-base rounded-2xl py-[19px] text-[#7fded3]/[0.61] my-0 bg-[#010202]/[0.33]">
             EXPLORE COLLECTION
           </button>
         </div>
