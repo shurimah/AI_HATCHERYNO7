@@ -28,7 +28,7 @@ const Hero = () => {
         <div className="flex flex-col items-center text-center my-0 py-0">
           
           <h1 className="text-5xl md:text-7xl mb-6 text-glow font-extrabold">
-            <span className="text-hatchery-mint text-center px-0 my-0 text-3xl font-extralight">HATCHERY</span> <span className="text-hatchery-light">NO.7</span>
+            <span className="text-hatchery-mint text-center px-0 my-0 font-extralight text-2xl">HATCHERY</span> <span className="text-hatchery-light">NO.7</span>
           </h1>
           
           
