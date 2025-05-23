@@ -18,7 +18,7 @@ const Hero = () => {
       
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
-        <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-30 mx-0 my-[113px]">
+        <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-30 mx-0 my-[109px]">
           <source src="/ZOOMBOI.mp4" type="video/mp4" />
         </video>
       </div>
@@ -28,7 +28,7 @@ const Hero = () => {
         <div className="flex flex-col items-center text-center my-0 py-0">
           
           <h1 className="text-5xl md:text-7xl mb-6 text-glow font-extrabold">
-            <span className="text-hatchery-mint text-center px-0 my-0 font-thin text-3xl">HATCHERY</span> <span className="text-hatchery-light">NO.7</span>
+            <span className="text-hatchery-mint text-center px-0 my-0 text-3xl font-extralight">HATCHERY</span> <span className="text-hatchery-light">NO.7</span>
           </h1>
           
           
