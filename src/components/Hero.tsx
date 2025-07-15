@@ -19,7 +19,7 @@ const Hero = () => {
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-30">
-          <source src="/social_u7937583938_Create_a_logo_in_this_style_that_has_a_the_dragon_95112706-75df-46c4-a300-97f1a98ae3d9_1 (2).mp4" type="video/mp4" />
+          <source src="/dragon-background.mp4" type="video/mp4" />
         </video>
       </div>
 
