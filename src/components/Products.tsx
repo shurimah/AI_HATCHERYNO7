@@ -80,7 +80,7 @@ const ProductCard = ({
     <motion.div 
       className="sci-fi-card flex flex-col h-full transition-opacity duration-300"
       style={{ opacity }}
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 80, y: 100 }}
       whileInView={{ opacity: shouldShowOnHover ? 0.1 : 0.9, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
