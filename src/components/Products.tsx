@@ -111,7 +111,7 @@ const Products = () => {
   return (
     <section id="products" className="py-20 relative">
       {/* Background Image */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-40">
         <img 
           src="/lovable-uploads/ecbbc397-2946-461c-99a7-ddda8d11e2f2.png" 
           alt="Laboratory background"
