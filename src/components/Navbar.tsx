@@ -15,7 +15,7 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  return <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-hatchery-darker/10 backdrop-blur-md py-2" : "bg-transparent py-6"}`}>
+  return <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-hatchery-darker/80 backdrop-blur-md py-2" : "bg-transparent py-6"}`}>
       <div className="container mx-auto flex justify-between items-center px-4">
         <div className="flex items-center gap-2">
           <div className="relative">
@@ -24,7 +24,7 @@ const Navbar = () => {
           style={{
             background: 'transparent'
           }} // Ensuring transparent background
-          src="RAW_SPLASH_DARK_EGG.mp4" className="h-16 w-16 object-contain" />
+          src="/lovable-uploads/33c6c5f0-0d9d-4900-8ac7-ef94e98a7dbc.jpg" className="h-16 w-16 object-contain" />
           </div>
           <span className="font-orbitron text-hatchery-mint font-bold text-xl tracking-wider">HATCHERY NO.7</span>
         </div>
