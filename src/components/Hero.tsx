@@ -23,7 +23,7 @@ const Hero = () => {
           alt="Dragon laboratory scene"
           className="w-full h-full object-cover opacity-70"
         />
-        <div className="absolute inset-0 bg-hatchery-dark/30"></div>
+        <div className="absolute inset-0 bg-hatchery-dark/20"></div>
       </div>
 
       {/* Content */}
@@ -46,10 +46,6 @@ const Hero = () => {
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <ChevronDown className="text-hatchery-mint h-8 w-8" />
       </div>
-
-      {/* Decorative Lines */}
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-hatchery-mint/30 to-transparent"></div>
-      <div className="absolute bottom-2 left-0 w-full h-px bg-gradient-to-r from-transparent via-hatchery-mint/20 to-transparent"></div>
     </section>;
 };
 export default Hero;
