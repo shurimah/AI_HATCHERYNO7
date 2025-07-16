@@ -16,14 +16,11 @@ const Hero = () => {
         <div className="absolute top-[60%] left-[30%] w-20 h-20 bg-hatchery-mint/5 rounded-full blur-3xl"></div>
       </div>
       
-      {/* Hero Background Image */}
+      {/* Video Background */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="/lovable-uploads/dfa98178-9f3f-4df0-83b8-3e3c3ef349a2.png" 
-          alt="Dragon laboratory scene"
-          className="w-full h-full object-cover opacity-70"
-        />
-        <div className="absolute inset-0 bg-hatchery-dark/20"></div>
+        <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-30">
+          <source src="/background-loop.mp4" type="video/mp4" />
+        </video>
       </div>
 
       {/* Content */}
@@ -46,6 +43,10 @@ const Hero = () => {
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <ChevronDown className="text-hatchery-mint h-8 w-8" />
       </div>
+
+      {/* Decorative Lines */}
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-hatchery-mint/30 to-transparent"></div>
+      <div className="absolute bottom-2 left-0 w-full h-px bg-gradient-to-r from-transparent via-hatchery-mint/20 to-transparent"></div>
     </section>;
 };
 export default Hero;
