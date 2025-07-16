@@ -29,12 +29,11 @@ const Hero = () => {
     
 
       {/* Content */}
-      <div class="flex items-center justify-center min-h-screen bg-black">
-        <h1 class="text-center text-5xl md:text-7xl font-extrabold text-hatchery-mint">
+      <div className="flex items-center justify-center min-h-screen bg-black">
+        <h1 className="text-center text-5xl md:text-7xl font-extrabold text-hatchery-mint drop-shadow-md">
           Hatchery No. 7
         </h1>
       </div>
-
           
           
           
