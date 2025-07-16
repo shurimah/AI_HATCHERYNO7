@@ -16,11 +16,14 @@ const Hero = () => {
         <div className="absolute top-[60%] left-[30%] w-20 h-20 bg-hatchery-mint/5 rounded-full blur-3xl"></div>
       </div>
       
-      {/* Video Background */}
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-30">
-          <source src="/background-loop.mp4" type="video/mp4" />
-        </video>
+        <img 
+          src="/lovable-uploads/00144a9a-9e4c-44e9-9c60-6d3aa348156f.png" 
+          alt="Dragon scene background"
+          className="w-full h-full object-cover opacity-40"
+        />
+        <div className="absolute inset-0 bg-hatchery-dark/60"></div>
       </div>
 
       {/* Content */}
