@@ -24,7 +24,7 @@ const Navbar = () => {
           style={{
             background: 'transparent'
           }} // Ensuring transparent background
-          src="https://github.com/shurimah/AI_HATCHERYNO7/blob/main/RAW_SPLASH_DARK_EGG.mp4" className="h-16 w-16 object-contain" />
+          src="RAW_SPLASH_DARK_EGG.mp4" className="h-16 w-16 object-contain" />
           </div>
           <span className="font-orbitron text-hatchery-mint font-bold text-xl tracking-wider">HATCHERY NO.7</span>
         </div>
