@@ -115,7 +115,7 @@ const Products = () => {
         <img 
           src="/lovable-uploads/ecbbc397-2946-461c-99a7-ddda8d11e2f2.png" 
           alt="Laboratory background"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain bg-hatchery-dark"
         />
         <div className="absolute inset-0 bg-hatchery-dark/80"></div>
       </div>
