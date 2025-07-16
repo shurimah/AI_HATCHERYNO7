@@ -110,10 +110,20 @@ const Products = () => {
 
   return (
     <section id="products" className="py-20 relative">
-      {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-hatchery-mint/30 to-transparent"></div>
+      {/* Background Image */}
+      <div className="absolute inset-0 opacity-20">
+        <img 
+          src="/lovable-uploads/ecbbc397-2946-461c-99a7-ddda8d11e2f2.png" 
+          alt="Laboratory background"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-hatchery-dark/80"></div>
+      </div>
       
-      <div className="container mx-auto px-6">
+      {/* Decorative Elements */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-hatchery-mint/30 to-transparent z-10"></div>
+      
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-glow mb-4">
             <span className="text-hatchery-mint">LABORATORY</span> SPECIMENS
