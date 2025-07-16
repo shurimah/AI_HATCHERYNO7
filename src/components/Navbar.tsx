@@ -24,7 +24,7 @@ const Navbar = () => {
           style={{
             background: 'transparent'
           }} // Ensuring transparent background
-          src="RAW_SPLASH_DARK_EGG.mp4" className="h-16 w-16 object-contain" />
+          src="/lovable-uploads/33c6c5f0-0d9d-4900-8ac7-ef94e98a7dbc.jpg" className="h-16 w-16 object-contain" />
           </div>
           <span className="font-orbitron text-hatchery-mint font-bold text-xl tracking-wider">HATCHERY NO.7</span>
         </div>
