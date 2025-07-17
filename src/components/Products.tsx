@@ -7,10 +7,10 @@ import { Hexagon } from "lucide-react";
 const products = [
   {
     id: 1,
-    name: "Emerald Spine Dragon",
-    description: "Articulated flexi-dragon with 32 interlocking segments for maximum movement range.",
-    price: 39.99,
-    image: "https://images.unsplash.com/photo-1577493340887-b7bfff550145?q=80&w=800&auto=format&fit=crop",
+    name: "3D Printed Flexible Articulated Crystal Dragon [2025 Edition]",
+    description: "High-resolution, customizable, articulated. This unique and detailed flexi-dragon comes with 44 interlocking segments for maximum movement range. It is a must-have for collectors or fans of fantasy and dragon-themed art.",
+    price: 34.99,
+    image: "https://github.com/shurimah/AI_HATCHERYNO7/blob/main/CRYSTAL_2025_1.png",
     category: "dragons"
   },
   {
