@@ -10,7 +10,7 @@ const products = [
     name: "Flexi Articulated Crystal Dragon [2025 Edition]",
     description: "Articulated flexi-dragon with 44 interlocking segments for maximum movement range. This detailed Cinderwing3D licensed piece is a must-have for collectors or fans of fantasy and dragon-themed art. ",
     price: 39.99,
-    image: "crystal-dragon.png",
+    image: "https://github.com/shurimah/AI_HATCHERYNO7/blob/76330b9fe22124138935d4ff6a6a75e92fcc7701/crystal-dragon.png",
     category: "dragons"
   },
   {
