@@ -37,13 +37,18 @@ const processSteps = [
 const Process = () => {
   return (
     <section id="process" className="py-20 relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute -top-8 left-0 w-full h-16 bg-gradient-to-b from-transparent to-hatchery-mint/5"></div>
-      
-      {/* Background Graphics */}
-      <div className="absolute top-0 right-0 w-1/2 h-full opacity-10">
-        <div className="absolute top-0 right-0 h-full w-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzdGREVEMyIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtZGFzaGFycmF5PSI1LDEwIi8+PC9zdmc+')]"></div>
+      {/* Background Image */}
+      <div className="absolute inset-0 opacity-60">
+        <img 
+          src="/lovable-uploads/6b334a79-06fa-43a9-a89e-dd5f63f72184.png" 
+          alt="Laboratory background"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-hatchery-dark/70"></div>
       </div>
+      
+      {/* Decorative Elements */}
+      <div className="absolute -top-8 left-0 w-full h-16 bg-gradient-to-b from-transparent to-hatchery-mint/5 z-10"></div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
