@@ -10,7 +10,7 @@ const products = [
     name: "3D Printed Flexible Articulated Crystal Dragon [2025 Edition]",
     description: "High-resolution, customizable, articulated. This unique and detailed flexi-dragon comes with 44 interlocking segments for maximum movement range. It is a must-have for collectors or fans of fantasy and dragon-themed art.",
     price: 34.99,
-    image: "https://github.com/shurimah/AI_HATCHERYNO7/CRYSTAL_2025_1.png",
+    image: "https://github.com/shuimah/AI_HATCHERYNO7/crystal-dragon.png",
     category: "dragons"
   },
   {
