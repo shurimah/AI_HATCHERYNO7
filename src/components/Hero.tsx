@@ -26,14 +26,13 @@ const Hero = () => {
         <div className="absolute inset-0 bg-hatchery-dark/30"></div>
       </div>
 
-    
-
       {/* Content */}
-      <div className="flex items-center justify-center min-h-screen bg-black">
-        <h1 className="text-center text-5xl md:text-7xl font-extrabold text-hatchery-mint drop-shadow-md">
-          Hatchery No. 7
-        </h1>
-      </div>
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="rounded-sm">
+          
+          <h1 className="text-5xl md:text-7xl mb-6 text-glow font-extrabold">
+            <span className="text-hatchery-mint text-center px-0 my-0 font-extralight text-3xl">HATCHERY</span> <span className="text-hatchery-light">NO.7</span>
+          </h1>
           
           
           
@@ -48,7 +47,9 @@ const Hero = () => {
         <ChevronDown className="text-hatchery-mint h-8 w-8" />
       </div>
 
-  
+      {/* Decorative Lines */}
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-hatchery-mint/30 to-transparent"></div>
+      <div className="absolute bottom-2 left-0 w-full h-px bg-gradient-to-r from-transparent via-hatchery-mint/20 to-transparent"></div>
     </section>;
 };
 export default Hero;
