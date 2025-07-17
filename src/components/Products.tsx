@@ -61,31 +61,14 @@ const categories = [
   { id: "inventions", label: "INVENTIONS" }
 ];
 
-const ProductCard = ({ 
-  product, 
-  isHovered, 
-  onHover, 
-  onLeave,
-  shouldShowOnHover
-}: { 
-  product: typeof products[0];
-  isHovered: boolean;
-  onHover: () => void;
-  onLeave: () => void;
-  shouldShowOnHover: boolean;
-}) => {
-  const opacity = shouldShowOnHover ? (isHovered ? 1 : 0.1) : 0.9;
-  
+const ProductCard = ({ product }: { product: typeof products[0] }) => {
   return (
     <motion.div 
-      className="sci-fi-card flex flex-col h-full transition-opacity duration-300"
-      style={{ opacity }}
+      className="sci-fi-card flex flex-col h-full"
       initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: shouldShowOnHover ? 0.1 : 0.9, y: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      onMouseEnter={onHover}
-      onMouseLeave={onLeave}
     >
       {/* Image Container */}
       <div className="relative h-48 overflow-hidden">
@@ -120,32 +103,19 @@ const ProductCard = ({
 
 const Products = () => {
   const [activeCategory, setActiveCategory] = useState("all");
-  const [isHoveringSection, setIsHoveringSection] = useState(false);
-  const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
   
-  const filteredProducts = activeCategory === "all"
+  const filteredProducts = activeCategory === "all" 
     ? products 
     : products.filter(product => product.category === activeCategory);
 
   return (
-    <section 
-      id="products" 
-      className="py-20 relative"
-      onMouseEnter={() => setIsHoveringSection(true)}
-      onMouseLeave={() => {
-        setIsHoveringSection(false);
-        setHoveredProduct(null);
-      }}
-    >
+    <section id="products" className="py-20 relative">
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 transition-opacity duration-300"
-        style={{ opacity: hoveredProduct !== null ? 0.4 : 0.77 }}
-      >
+      <div className="absolute inset-0 opacity-20">
         <img 
           src="/lovable-uploads/ecbbc397-2946-461c-99a7-ddda8d11e2f2.png" 
           alt="Laboratory background"
-          className="w-full h-full object-contain bg-hatchery-dark"
+          className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-hatchery-dark/80"></div>
       </div>
@@ -183,14 +153,7 @@ const Products = () => {
         {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProducts.map(product => (
-            <ProductCard 
-              key={product.id} 
-              product={product}
-              isHovered={hoveredProduct === product.id}
-              onHover={() => setHoveredProduct(product.id)}
-              onLeave={() => setHoveredProduct(null)}
-              shouldShowOnHover={isHoveringSection}
-            />
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </div>
