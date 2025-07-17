@@ -7,10 +7,10 @@ import { Hexagon } from "lucide-react";
 const products = [
   {
     id: 1,
-    name: "Emerald Spine Dragon",
-    description: "Articulated flexi-dragon with 32 interlocking segments for maximum movement range.",
+    name: "Flexi Articulated Crystal Dragon [2025 Edition]",
+    description: "Articulated flexi-dragon with 44 interlocking segments for maximum movement range. This detailed Cinderwing3D licensed piece is a must-have for collectors or fans of fantasy and dragon-themed art. ",
     price: 39.99,
-    image: "https://images.unsplash.com/photo-1577493340887-b7bfff550145?q=80&w=800&auto=format&fit=crop",
+    image: "crystal-dragon.png",
     category: "dragons"
   },
   {
