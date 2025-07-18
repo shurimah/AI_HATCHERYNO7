@@ -7,10 +7,10 @@ import { Hexagon } from "lucide-react";
 const products = [
   {
     id: 1,
-    name: "Flexi Articulated Crystal Dragon [2025 Edition]",
-    description: "Articulated flexi-dragon with 44 interlocking segments for maximum movement range. This detailed Cinderwing3D licensed piece is a must-have for collectors or fans of fantasy and dragon-themed art. ",
+    name: "Emerald Spine Dragon",
+    description: "Articulated flexi-dragon with 32 interlocking segments for maximum movement range.",
     price: 39.99,
-    image: "crystal-dragon-1.png",
+    image: "https://images.unsplash.com/photo-1577493340887-b7bfff550145?q=80&w=800&auto=format&fit=crop",
     category: "dragons"
   },
   {
@@ -111,11 +111,11 @@ const Products = () => {
   return (
     <section id="products" className="py-20 relative">
       {/* Background Image */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-40">
         <img 
           src="/lovable-uploads/ecbbc397-2946-461c-99a7-ddda8d11e2f2.png" 
           alt="Laboratory background"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain bg-hatchery-dark"
         />
         <div className="absolute inset-0 bg-hatchery-dark/80"></div>
       </div>
