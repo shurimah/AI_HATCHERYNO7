@@ -81,7 +81,7 @@ const ProductCard = ({ product }: { product: typeof products[0] }) => {
         <div className="absolute top-0 right-0 p-2">
           <div className="hexagon bg-black/60 backdrop-blur-sm border border-hatchery-mint/30 p-2">
             <p className="text-hatchery-mint font-orbitron text-sm">
-              ${product.price}
+              {`$${product.price}`}
             </p>
           </div>
         </div>
