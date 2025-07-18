@@ -1,9 +1,5 @@
 import { ChevronDown } from "lucide-react";
-import { useEffect, useRef } from "react";
-
 const Hero = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
   const handleScroll = () => {
     const productsSection = document.querySelector('#products');
     if (productsSection) {
@@ -12,21 +8,6 @@ const Hero = () => {
       });
     }
   };
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const handleTimeUpdate = () => {
-      // Restart video 0.1 seconds before it ends to create seamless loop
-      if (video.currentTime >= video.duration - 0.1) {
-        video.currentTime = 0;
-      }
-    };
-
-    video.addEventListener('timeupdate', handleTimeUpdate);
-    return () => video.removeEventListener('timeupdate', handleTimeUpdate);
-  }, []);
   return <section id="home" className="relative min-h-screen flex items-center">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -37,13 +18,7 @@ const Hero = () => {
       
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
-        <video 
-          ref={videoRef}
-          autoPlay 
-          muted 
-          playsInline 
-          className="w-full h-full object-cover opacity-30 transition-opacity duration-300"
-        >
+        <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-30">
           <source src="/background-loop.mp4" type="video/mp4" />
         </video>
       </div>
