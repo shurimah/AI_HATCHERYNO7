@@ -70,4 +70,17 @@
   .hexagon {
     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
   }
+
+  @keyframes slowZoom {
+    0% {
+      transform: scale(0.8);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .animate-slow-zoom {
+    animation: slowZoom 4s ease-out forwards;
+  }
 }

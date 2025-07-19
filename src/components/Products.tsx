@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Hexagon, ChevronLeft, ChevronRight } from "lucide-react";
 
 // Slideshow component for product images
-const ProductSlideshow = ({ images, price, isCrystalDragon = false }: { images: string[]; price: number; isCrystalDragon?: boolean }) => {
+const ProductSlideshow = ({ images, price, isCrystalDragon = false, isRoseDragon = false }: { images: string[]; price: number; isCrystalDragon?: boolean; isRoseDragon?: boolean }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [zoomPhase, setZoomPhase] = useState(0);
   const [circlePhase, setCirclePhase] = useState(0);
@@ -122,8 +122,10 @@ const ProductSlideshow = ({ images, price, isCrystalDragon = false }: { images: 
           } ${
             index === currentImageIndex && isCrystalDragon && currentImageIndex === images.length - 1 && zoomPhase === 1
               ? 'scale-[2.5] transform origin-top-right translate-x-8' 
-              : index === currentImageIndex && !isCrystalDragon && currentImageIndex === images.length - 1 && zoomPhase === 1
+              : index === currentImageIndex && !isCrystalDragon && !isRoseDragon && currentImageIndex === images.length - 1 && zoomPhase === 1
               ? 'scale-150 transform origin-center' 
+              : index === currentImageIndex && (isRoseDragon || (!isCrystalDragon && currentImageIndex !== images.length - 1))
+              ? 'animate-slow-zoom' 
               : ''
           }`}
         />
@@ -176,7 +178,7 @@ const ProductSlideshow = ({ images, price, isCrystalDragon = false }: { images: 
       )}
       
       {/* Spider circle animation */}
-      {!isCrystalDragon && currentImageIndex === images.length - 1 && circlePhase === 1 && (
+      {!isCrystalDragon && !isRoseDragon && currentImageIndex === images.length - 1 && circlePhase === 1 && (
         <div className="absolute top-20 right-60 w-12 h-12 z-20 pointer-events-none">
           {/* Drawing circle */}
           <svg className="w-12 h-12" viewBox="0 0 48 48">
@@ -248,10 +250,14 @@ const products = [
   },
   {
     id: 3,
-    name: "Helix Dragon",
-    description: "Double-twisted design creates a mesmerizing spiral effect when in motion.",
-    price: 49.99,
-    image: "https://images.unsplash.com/photo-1577493340036-39375571a8ba?q=80&w=800&auto=format&fit=crop",
+    name: "Rose Dragon",
+    description: "Elegant rose-themed dragon with intricate floral details and graceful design.",
+    price: 59.99,
+    images: [
+      "/rose-1.png",
+      "/rose-2.png", 
+      "/rose-3.png"
+    ],
     category: "dragons"
   },
   {
@@ -301,6 +307,7 @@ const ProductCard = ({ product }: { product: typeof products[0] }) => {
           images={product.images} 
           price={product.price} 
           isCrystalDragon={product.name === "Cinderwing Crystal Dragon [2025 Edition]"}
+          isRoseDragon={product.name === "Rose Dragon"}
         />
       ) : (
         <div className="relative h-48 overflow-hidden">
