@@ -1,9 +1,9 @@
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 const Hero = () => {
   const handleScroll = () => {
     const productsSection = document.querySelector('#products');
     if (productsSection) {
-      const offset = 100; // Offset to account for navbar height
+      const offset = 150; // Increased offset to account for larger navbar height
       const elementPosition = productsSection.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
       
@@ -23,15 +23,14 @@ const Hero = () => {
       
       {/* Splash Background */}
       <div className="absolute inset-0 z-0">
-        <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-30">
-          <source src="/buck-hat-splash.mov" type="video/quicktime" />
-          <source src="/buck-hat-splash.mov" type="video/mp4" />
+        <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-[17%]">
+          <source src="/brown-hair-splash.mp4" type="video/mp4" />
         </video>
         {/* Fallback image if video doesn't load */}
         <img 
           src="/bucket-hat-splash.png" 
           alt="Splash Background" 
-          className="w-full h-full object-cover opacity-30 absolute inset-0 z-0"
+          className="w-full h-full object-cover opacity-[17%] absolute inset-0 z-0"
           style={{ display: 'none' }}
           onError={(e) => {
             const target = e.target as HTMLImageElement;
@@ -45,11 +44,11 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-6 relative z-10 pt-32">
+      <div className="container mx-auto px-4 relative z-10 pt-32">
         <div className="text-center">
           
           <h1 className="text-6xl md:text-9xl mb-8 text-glow font-extrabold">
-            <div className="flex justify-center items-center gap-4">
+            <div className="flex justify-center items-baseline gap-4">
               <span className="text-hatchery-mint font-extralight text-4xl md:text-6xl">HATCHERY</span>
               <span className="text-hatchery-light font-extralight text-6xl md:text-8xl">no.7</span>
             </div>
@@ -57,18 +56,22 @@ const Hero = () => {
           
           
           
-          <div className="flex justify-center mt-8">
+          <div className="flex flex-col items-center mt-8">
+            {/* Top Arrow */}
+            <div className="mb-0.5 animate-bounce">
+              <ChevronDown className="text-hatchery-mint h-8 w-8" />
+            </div>
+            
             <img 
-              src="/explore-collection-button.png" 
+              src="/LOGO_BUTTONv3.png" 
               alt="Explore Collection" 
               className="h-36 w-auto cursor-pointer transition-transform duration-300 hover:scale-110"
               onClick={handleScroll}
-              style={{ background: 'transparent' }}
             />
           </div>
           
-          {/* Scroll Indicator */}
-          <div className="flex justify-center mt-4 animate-bounce">
+          {/* Bottom Arrow */}
+          <div className="flex justify-center mt-2 animate-bounce">
             <ChevronDown className="text-hatchery-mint h-8 w-8" />
           </div>
         </div>
@@ -77,6 +80,18 @@ const Hero = () => {
       {/* Decorative Lines */}
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-hatchery-mint/30 to-transparent"></div>
       <div className="absolute bottom-2 left-0 w-full h-px bg-gradient-to-r from-transparent via-hatchery-mint/20 to-transparent"></div>
+      
+      {/* Cinderwing3D Licensed Badge */}
+      <div className="absolute bottom-4 right-4 flex items-center gap-2 z-20">
+        <span className="text-hatchery-mint/70 text-xs font-orbitron tracking-wide">
+          Cinderwing3D Licensed
+        </span>
+        <img 
+          src="/authorizedsellerbadge.png" 
+          alt="Authorized Seller Badge" 
+          className="w-16 h-16"
+        />
+      </div>
     </section>;
 };
 export default Hero;

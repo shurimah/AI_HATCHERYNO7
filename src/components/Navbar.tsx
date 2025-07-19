@@ -30,21 +30,22 @@ const Navbar = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled ? "bg-hatchery-darker/80 backdrop-blur-md py-2" : "bg-transparent py-6"
     }`}>
-      <div className="container mx-auto flex justify-between items-center px-4">
-        <div className="flex items-center gap-2">
+      <div className="container mx-auto flex flex-col items-center px-4">
+        {/* Logo centered at top */}
+        <div className="flex justify-center mb-4">
           <div className="relative">
             <img 
               src="/logo-1.png" 
               alt="Hatchery No.7 Logo" 
-              className="h-24 w-24 cursor-pointer transition-transform duration-300 hover:scale-105" // Added cursor-pointer and hover effect
-              style={{ background: 'transparent' }} // Ensuring transparent background
+              className="h-32 w-32 cursor-pointer transition-transform duration-300 hover:scale-105"
+              style={{ background: 'transparent' }}
               onClick={scrollToTop}
             />
           </div>
-          <span className="font-orbitron text-hatchery-mint font-bold text-xl tracking-wider">HATCHERY NO.7</span>
         </div>
         
-        <div className="hidden md:flex space-x-8">
+        {/* Menu options below logo */}
+        <div className="hidden md:flex space-x-8 mb-4">
           {["Home", "Products", "Process", "Contact"].map((item) => (
             <a 
               key={item} 
@@ -56,7 +57,8 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="md:hidden">
+        {/* Mobile menu button */}
+        <div className="md:hidden absolute top-4 right-4">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="text-hatchery-mint hover:text-hatchery-accent transition-colors"
