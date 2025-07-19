@@ -24,16 +24,16 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="rounded-sm">
+      <div className="container mx-auto px-6 relative z-10 pt-32">
+        <div className="text-center">
           
           <h1 className="text-5xl md:text-7xl mb-6 text-glow font-extrabold">
-            <span className="text-hatchery-mint text-center px-0 my-0 font-extralight text-3xl">HATCHERY</span> <span className="text-hatchery-light">NO.7</span>
+            <span className="text-hatchery-mint font-extralight text-3xl">HATCHERY</span> <span className="text-hatchery-light">NO.7</span>
           </h1>
           
           
           
-          <button onClick={handleScroll} className="font-extralight">
+          <button onClick={handleScroll} className="font-extralight bg-hatchery-mint/10 hover:bg-hatchery-mint/20 border border-hatchery-mint/50 hover:border-hatchery-mint text-hatchery-mint px-8 py-3 rounded-sm transition-colors font-orbitron tracking-wide">
             EXPLORE COLLECTION
           </button>
         </div>

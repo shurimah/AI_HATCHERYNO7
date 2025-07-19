@@ -27,9 +27,9 @@ const Navbar = () => {
         <div className="flex items-center gap-2">
           <div className="relative">
             <img 
-              src="/lovable-uploads/e644a66e-60d0-403d-8888-8ab3e91a741d.png" 
+              src="/logo-1.png" 
               alt="Hatchery No.7 Logo" 
-              className="h-16 w-16" // Increased from h-10 w-10 to h-16 w-16
+              className="h-24 w-24" // Increased from h-20 w-20 to h-24 w-24
               style={{ background: 'transparent' }} // Ensuring transparent background
             />
           </div>

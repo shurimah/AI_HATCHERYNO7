@@ -15,9 +15,9 @@ const Footer = () => {
           <div className="flex items-center mb-8 md:mb-0">
             <div className="relative">
               <img 
-                src="/lovable-uploads/e644a66e-60d0-403d-8888-8ab3e91a741d.png" 
+                src="/logo-1.png" 
                 alt="Hatchery No.7 Logo" 
-                className="h-12 w-12 mr-3"
+                className="h-20 w-20 mr-3"
               />
               <div className="absolute -inset-1 bg-hatchery-mint/10 rounded-full blur-md -z-10"></div>
             </div>
