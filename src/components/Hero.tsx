@@ -3,7 +3,12 @@ const Hero = () => {
   const handleScroll = () => {
     const productsSection = document.querySelector('#products');
     if (productsSection) {
-      productsSection.scrollIntoView({
+      const offset = 100; // Offset to account for navbar height
+      const elementPosition = productsSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      
+      window.scrollTo({
+        top: offsetPosition,
         behavior: 'smooth'
       });
     }
@@ -16,32 +21,57 @@ const Hero = () => {
         <div className="absolute top-[60%] left-[30%] w-20 h-20 bg-hatchery-mint/5 rounded-full blur-3xl"></div>
       </div>
       
-      {/* Video Background */}
+      {/* Splash Background */}
       <div className="absolute inset-0 z-0">
         <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-30">
-          <source src="/background-loop.mp4" type="video/mp4" />
+          <source src="/buck-hat-splash.mov" type="video/quicktime" />
+          <source src="/buck-hat-splash.mov" type="video/mp4" />
         </video>
+        {/* Fallback image if video doesn't load */}
+        <img 
+          src="/bucket-hat-splash.png" 
+          alt="Splash Background" 
+          className="w-full h-full object-cover opacity-30 absolute inset-0 z-0"
+          style={{ display: 'none' }}
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            const video = target.parentElement?.querySelector('video') as HTMLVideoElement;
+            if (video) {
+              video.style.display = 'none';
+              target.style.display = 'block';
+            }
+          }}
+        />
       </div>
 
       {/* Content */}
       <div className="container mx-auto px-6 relative z-10 pt-32">
         <div className="text-center">
           
-          <h1 className="text-5xl md:text-7xl mb-6 text-glow font-extrabold">
-            <span className="text-hatchery-mint font-extralight text-3xl">HATCHERY</span> <span className="text-hatchery-light">NO.7</span>
+          <h1 className="text-6xl md:text-9xl mb-8 text-glow font-extrabold">
+            <div className="flex justify-center items-center gap-4">
+              <span className="text-hatchery-mint font-extralight text-4xl md:text-6xl">HATCHERY</span>
+              <span className="text-hatchery-light font-extralight text-6xl md:text-8xl">no.7</span>
+            </div>
           </h1>
           
           
           
-          <button onClick={handleScroll} className="font-extralight bg-hatchery-mint/10 hover:bg-hatchery-mint/20 border border-hatchery-mint/50 hover:border-hatchery-mint text-hatchery-mint px-8 py-3 rounded-sm transition-colors font-orbitron tracking-wide">
-            EXPLORE COLLECTION
-          </button>
+          <div className="flex justify-center mt-8">
+            <img 
+              src="/explore-collection-button.png" 
+              alt="Explore Collection" 
+              className="h-36 w-auto cursor-pointer transition-transform duration-300 hover:scale-110"
+              onClick={handleScroll}
+              style={{ background: 'transparent' }}
+            />
+          </div>
+          
+          {/* Scroll Indicator */}
+          <div className="flex justify-center mt-4 animate-bounce">
+            <ChevronDown className="text-hatchery-mint h-8 w-8" />
+          </div>
         </div>
-      </div>
-      
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ChevronDown className="text-hatchery-mint h-8 w-8" />
       </div>
 
       {/* Decorative Lines */}

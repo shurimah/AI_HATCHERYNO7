@@ -6,6 +6,13 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
@@ -29,8 +36,9 @@ const Navbar = () => {
             <img 
               src="/logo-1.png" 
               alt="Hatchery No.7 Logo" 
-              className="h-24 w-24" // Increased from h-20 w-20 to h-24 w-24
+              className="h-24 w-24 cursor-pointer transition-transform duration-300 hover:scale-105" // Added cursor-pointer and hover effect
               style={{ background: 'transparent' }} // Ensuring transparent background
+              onClick={scrollToTop}
             />
           </div>
           <span className="font-orbitron text-hatchery-mint font-bold text-xl tracking-wider">HATCHERY NO.7</span>
