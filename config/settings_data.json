@@ -1,0 +1,19 @@
+{
+  "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo_width": 100,
+          "menu": "main-menu"
+        }
+      }
+    },
+    "content_for_index": [
+      "hero",
+      "featured-products",
+      "about",
+      "contact"
+    ]
+  }
+} 
