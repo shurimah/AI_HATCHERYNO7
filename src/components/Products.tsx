@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Hexagon, ChevronLeft, ChevronRight } from "lucide-react";
 
 // Slideshow component for product images
-const ProductSlideshow = ({ images, price, isCrystalDragon = false, isRoseDragon = false }: { images: string[]; price: number; isCrystalDragon?: boolean; isRoseDragon?: boolean }) => {
+const ProductSlideshow = ({ images, price, isCrystalDragon = false, isRoseDragon = false, isFrogula = false }: { images: (string | { video: string })[]; price: number; isCrystalDragon?: boolean; isRoseDragon?: boolean; isFrogula?: boolean }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [zoomPhase, setZoomPhase] = useState(0);
   const [circlePhase, setCirclePhase] = useState(0);
@@ -67,31 +67,25 @@ const ProductSlideshow = ({ images, price, isCrystalDragon = false, isRoseDragon
   }, [isAutoPlaying, images.length, currentImageIndex]);
 
   useEffect(() => {
-    if (isCrystalDragon && currentImageIndex === images.length - 1) { // Target the last image (last dot)
-      // Start zoom after 0.5 seconds
+    if (isCrystalDragon && currentImageIndex === images.length - 1) {
       const zoomTimer = setTimeout(() => setZoomPhase(1), 500);
-      // Start circle animation after zoom completes (1 second total)
       const circleTimer = setTimeout(() => setCirclePhase(1), 1000);
-      
       return () => {
         clearTimeout(zoomTimer);
         clearTimeout(circleTimer);
       };
-    } else if (!isCrystalDragon && currentImageIndex === images.length - 1) { // Spider slideshow last image
-      // Start zoom after 0.5 seconds
+    } else if (!isCrystalDragon && !isFrogula && currentImageIndex === images.length - 1) {
       const zoomTimer = setTimeout(() => setZoomPhase(1), 500);
-      // Start circle animation after zoom completes (1 second total)
       const circleTimer = setTimeout(() => setCirclePhase(1), 1000);
-      
       return () => {
         clearTimeout(zoomTimer);
         clearTimeout(circleTimer);
       };
     } else {
-      setZoomPhase(0); // Reset zoom phase for other images
-      setCirclePhase(0); // Reset circle phase
+      setZoomPhase(0);
+      setCirclePhase(0);
     }
-  }, [currentImageIndex, isCrystalDragon, images]);
+  }, [currentImageIndex, isCrystalDragon, isFrogula, images]);
 
   return (
     <div 
@@ -112,24 +106,43 @@ const ProductSlideshow = ({ images, price, isCrystalDragon = false, isRoseDragon
       }} />
 
       <div className="absolute inset-0 bg-hatchery-mint/10"></div>
-      {images.map((image, index) => (
-        <img 
-          key={image}
-          src={image} 
-          alt={`Product view ${index + 1}`}
-          className={`w-full h-full object-contain transition-all duration-1000 absolute inset-0 ${
-            index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-          } ${
-            index === currentImageIndex && isCrystalDragon && currentImageIndex === images.length - 1 && zoomPhase === 1
-              ? 'scale-[2.5] transform origin-top-right translate-x-8' 
-              : index === currentImageIndex && !isCrystalDragon && !isRoseDragon && currentImageIndex === images.length - 1 && zoomPhase === 1
-              ? 'scale-150 transform origin-center' 
-              : index === currentImageIndex && (isRoseDragon || (!isCrystalDragon && currentImageIndex !== images.length - 1))
-              ? 'animate-slow-zoom' 
-              : ''
-          }`}
-        />
-      ))}
+      {images.map((image, index) => {
+        if (typeof image === 'string') {
+          return (
+            <img 
+              key={image}
+              src={image} 
+              alt={`Product view ${index + 1}`}
+              className={`w-full h-full object-contain transition-all duration-1000 absolute inset-0 ${
+                index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+              } ${
+                index === currentImageIndex && isCrystalDragon && currentImageIndex === images.length - 1 && zoomPhase === 1
+                  ? 'scale-[2.5] transform origin-top-right translate-x-8' 
+                  : index === currentImageIndex && !isCrystalDragon && !isRoseDragon && currentImageIndex === images.length - 1 && zoomPhase === 1
+                  ? 'scale-150 transform origin-center' 
+                  : index === currentImageIndex && (isRoseDragon || (!isCrystalDragon && currentImageIndex !== images.length - 1))
+                  ? 'animate-slow-zoom' 
+                  : ''
+              }`}
+            />
+          );
+        } else if (typeof image === 'object' && 'video' in image) {
+          return (
+            <video
+              key={image.video}
+              src={image.video}
+              className={`w-full h-full object-contain transition-all duration-1000 absolute inset-0 ${
+                index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+              }`}
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+          );
+        }
+        return null;
+      })}
 
       {/* Navigation Arrows */}
       <button 
@@ -148,11 +161,9 @@ const ProductSlideshow = ({ images, price, isCrystalDragon = false, isRoseDragon
 
       {/* Price indicator */}
       <div className="absolute top-0 right-0 p-2 z-10">
-        <div className="hexagon bg-black/60 backdrop-blur-sm border border-hatchery-mint/30 p-2">
-          <p className="text-hatchery-mint font-orbitron text-sm">
-            {`$${price}`}
-          </p>
-        </div>
+        <span className="bg-hatchery-mint/20 text-hatchery-mint font-orbitron text-sm px-4 py-1 rounded-full shadow-md">
+          {`$${price}`}
+        </span>
       </div>
       
       {/* Red sharpie circle animation */}
@@ -199,6 +210,27 @@ const ProductSlideshow = ({ images, price, isCrystalDragon = false, isRoseDragon
         </div>
       )}
       
+      {/* Frogula circle animation */}
+      {isFrogula && currentImageIndex === images.length - 1 && circlePhase === 1 && (
+        <div className="absolute top-8 right-1/2 translate-x-1/2 w-12 h-12 z-20 pointer-events-none">
+          <svg className="w-12 h-12" viewBox="0 0 48 48">
+            <circle
+              cx="24"
+              cy="24"
+              r="20"
+              fill="none"
+              stroke="red"
+              strokeWidth="3"
+              strokeDasharray="126"
+              strokeDashoffset="126"
+              style={{
+                animation: 'drawCircle 2s ease-in-out forwards'
+              }}
+            />
+          </svg>
+        </div>
+      )}
+      
       {/* Image indicators */}
       <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1 z-10">
         {images.map((_, index) => (
@@ -221,13 +253,13 @@ const products = [
   {
     id: 1,
     name: "Mushroom Spider Collection",
-    description: "A collection of intricately designed mushroom spider specimens with various poses and details.",
-    price: 39.99,
+    description: "Tiny articulated jumping spider + mushroom cap. Tactile, pocket-safe, classroom-friendly fidget.",
+    price: 9.98,
     images: [
-      "/1.png",
-      "/2.png", 
-      "/4.png",
-      "/3.png"
+      "/mushroom-1.png",
+      "/mushroom-2.png", 
+      "/mushroom-4.png",
+      "/mushroom-3.png"
     ],
     category: "dragons"
   },
@@ -235,16 +267,19 @@ const products = [
     id: 2,
     name: "Cinderwing Crystal Dragon [2025 Edition]",
     description: "Limited edition crystal dragon with advanced articulation and premium materials.",
-    price: 89.99,
+    price: 29.99,
     images: [
-      "/5.png",
-      "/7.png", 
-      "/8.png",
-      "/9.png",
-      "/12.png",
-      "/13.png",
-      "/14.png",
-      "/15.png"
+      "/crystal-1.png",
+      "/crystal-2.png", 
+      "/crystal-3.png",
+      "/crystal-4.png",
+      "/crystal-5.png",
+      "/crystal-6.png",
+      "/crystal-7.png",
+      "/crystal-8.png",
+      "/crystal-9.png",
+      "/crystal-10.png",
+      "/crystal-11.png"
     ],
     category: "dragons"
   },
@@ -252,7 +287,7 @@ const products = [
     id: 3,
     name: "Rose Dragon",
     description: "Elegant rose-themed dragon with intricate floral details and graceful design.",
-    price: 59.99,
+    price: 19.99,
     images: [
       "/rose-1.png",
       "/rose-2.png", 
@@ -262,27 +297,15 @@ const products = [
   },
   {
     id: 4,
-    name: "Neural Interface Stand",
-    description: "Biomimetic headphone stand inspired by neural networks.",
-    price: 34.99,
-    image: "https://images.unsplash.com/photo-1612444530582-fc66183b16f3?q=80&w=800&auto=format&fit=crop",
-    category: "inventions"
-  },
-  {
-    id: 5,
-    name: "Holographic Display Module",
-    description: "Smartphone amplifier that creates pseudo-holographic effects.",
-    price: 29.99,
-    image: "https://images.unsplash.com/photo-1624969862293-b084f804a213?q=80&w=800&auto=format&fit=crop",
-    category: "inventions"
-  },
-  {
-    id: 6,
-    name: "Quantum Desktop Organizer",
-    description: "Modular organizational system with infinite configurations.",
-    price: 19.99,
-    image: "https://images.unsplash.com/photo-1618004652321-13a63e576b80?q=80&w=800&auto=format&fit=crop",
-    category: "inventions"
+    name: "Count Frogula",
+    description: "A whimsical frog vampire with a flair for the dramatic.",
+    price: 14.99,
+    images: [
+      "/frog-1.png",
+      "/frog-2.png",
+      { video: "/count-frogula-video.mp4" }
+    ],
+    category: "dragons"
   }
 ];
 
@@ -304,28 +327,13 @@ const ProductCard = ({ product }: { product: typeof products[0] }) => {
       {/* Image Container */}
       {product.images ? (
         <ProductSlideshow 
-          images={product.images} 
+          images={product.images as (string | { video: string })[]} 
           price={product.price} 
           isCrystalDragon={product.name === "Cinderwing Crystal Dragon [2025 Edition]"}
           isRoseDragon={product.name === "Rose Dragon"}
+          isFrogula={product.name === "Count Frogula"}
         />
-      ) : (
-        <div className="relative h-48 overflow-hidden">
-          <div className="absolute inset-0 bg-hatchery-mint/10"></div>
-          <img 
-            src={product.image} 
-            alt={product.name}
-            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-          />
-          <div className="absolute top-0 right-0 p-2">
-            <div className="hexagon bg-black/60 backdrop-blur-sm border border-hatchery-mint/30 p-2">
-              <p className="text-hatchery-mint font-orbitron text-sm">
-                {`$${product.price}`}
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
+      ) : null}
       
       {/* Content */}
       <div className="p-6 flex flex-col flex-grow">
@@ -354,7 +362,7 @@ const Products = () => {
       {/* Background Image */}
       <div className="absolute inset-0 opacity-20">
         <img 
-          src="/lovable-uploads/ecbbc397-2946-461c-99a7-ddda8d11e2f2.png" 
+          src="/laboratory-background.png" 
           alt="Laboratory background"
           className="w-full h-full object-cover"
         />

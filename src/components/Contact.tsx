@@ -34,23 +34,25 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 relative">
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute bottom-[20%] left-[10%] w-60 h-60 bg-hatchery-mint/5 rounded-full blur-3xl"></div>
-      </div>
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-glow mb-4">
-            <span className="text-hatchery-mint">CONTACT</span> LAB
-          </h2>
-          <p className="text-hatchery-light/70 max-w-2xl mx-auto">
-            Have questions about our specimens or custom requests? Our research team is ready to assist.
+    <section id="contact" className="py-20 bg-hatchery-dark text-hatchery-light">
+      <div className="container mx-auto px-4 max-w-2xl">
+        <h2 className="text-3xl font-bold mb-6 text-hatchery-mint">Contact</h2>
+        <div className="bg-black/30 rounded-lg p-6 shadow-lg">
+          <p className="mb-4 whitespace-pre-line">
+Hey there, fellow creative soul!
+
+So, you’ve got a wild idea swirling around in that noggin of yours, and you’re itching to see it come to life in glorious 3D? - Well, you’ve landed in the right place!
+
+Here’s the scoop: if you’re dreaming of a custom 3D-printed item that’s as unique as a snowflake in a blizzard, we’re all ears! Just shoot us a message with your idea, and we’ll see if we can whip up something that’ll knock your socks off! (Or at least make you consider wearing funky socks instead.)
+
+Got a question that’s been tickling your brain like a feather duster? Don’t be shy! I love questions more than my cat Puff loves a sunny spot on the floor. Whether it’s about our 3D printing process, materials, or how to make the perfect cup of coffee (okay, maybe not that last one), we’re here to help! Just drop us a line.
+
+Now, let’s talk about the nitty-gritty of custom orders. We’re all about that eco-friendly life, so rest assured that your custom creation will be crafted with materials that are kinder to Mother Earth than a hug from a tree. (And trust us, trees love hugs!)
+
+Once you’ve sent us your idea, we’ll discuss the details, like size, color, and any other quirks you want to include. (Maybe you want a 3D-printed cat that doubles as a paperweight? We’re game!)
+
+So, whether you’re looking to create a one-of-a-kind masterpiece or just have a burning question that needs extinguishing, we’re here for you! Let’s make some magic happen, on 3D print at a time. (And remember, the only limit is your imagination—well, that and the laws of physics, but who’s counting?)
           </p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           {/* Contact Form */}
           <motion.div 
             className="sci-fi-card p-6"
