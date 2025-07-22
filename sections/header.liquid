@@ -1,0 +1,60 @@
+{% assign logo_alt = section.settings.logo_alt | default: shop.name %}
+
+<header class="header">
+  <div class="header__content">
+    <div class="header__logo-container">
+      {% if section.settings.logo != blank %}
+        <img 
+          src="{{ section.settings.logo | img_url: 'medium' }}"
+          alt="{{ logo_alt | escape }}"
+          class="header__logo"
+          width="{{ section.settings.logo_width }}"
+          height="auto"
+          loading="eager"
+        >
+      {% else %}
+        <span class="header__shop-name">{{ shop.name }}</span>
+      {% endif %}
+    </div>
+
+    <nav class="header__nav">
+      {% for link in section.settings.menu.links %}
+        <a href="{{ link.url }}" class="header__nav-link">{{ link.title }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+    {
+      "type": "text",
+      "id": "logo_alt",
+      "label": "Logo alt text"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 50,
+      "max": 250,
+      "step": 10,
+      "default": 100,
+      "unit": "px",
+      "label": "Logo width"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    }
+  ]
+}
+{% endschema %} 

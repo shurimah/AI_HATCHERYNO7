@@ -1,0 +1,33 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Hatchery No.7",
+    "theme_version": "1.0.0",
+    "theme_author": "Hatchery No.7",
+    "theme_documentation_url": "",
+    "theme_support_url": ""
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "hatchery_mint",
+        "label": "Hatchery Mint",
+        "default": "#00ffcc"
+      },
+      {
+        "type": "color",
+        "id": "hatchery_light",
+        "label": "Hatchery Light",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "hatchery_dark",
+        "label": "Hatchery Dark",
+        "default": "#000000"
+      }
+    ]
+  }
+] 
