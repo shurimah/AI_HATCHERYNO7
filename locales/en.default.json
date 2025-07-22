@@ -1,0 +1,21 @@
+{
+  "general": {
+    "404": {
+      "title": "404 Page Not Found",
+      "subtext": "The page you requested does not exist."
+    },
+    "navigation": {
+      "home": "Home",
+      "products": "Products",
+      "about": "About",
+      "contact": "Contact"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to cart",
+      "sold_out": "Sold out",
+      "unavailable": "Unavailable"
+    }
+  }
+} 

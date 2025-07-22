@@ -1,0 +1,38 @@
+{% paginate collection.products by 24 %}
+  <div class="page-width">
+    <header class="collection-header">
+      <h1>{{ collection.title }}</h1>
+      {% if collection.description != blank %}
+        <div class="rte">
+          {{ collection.description }}
+        </div>
+      {% endif %}
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {% for product in collection.products %}
+        <div class="product-card">
+          <a href="{{ product.url | within: collection }}">
+            {% if product.featured_media %}
+              <img
+                src="{{ product.featured_media | img_url: '400x' }}"
+                alt="{{ product.featured_media.alt | escape }}"
+                loading="lazy"
+                width="400"
+                height="400"
+              >
+            {% endif %}
+            <h2>{{ product.title }}</h2>
+            <p>{{ product.price | money }}</p>
+          </a>
+        </div>
+      {% else %}
+        <p>No products found in this collection</p>
+      {% endfor %}
+    </div>
+
+    {% if paginate.pages > 1 %}
+      {% render 'pagination', paginate: paginate %}
+    {% endif %}
+  </div>
+{% endpaginate %} 
